@@ -1,0 +1,121 @@
+@import url(https://fonts.bunny.net/css?family=space-mono:400,400i,700,700i);
+
+body {
+    font-family: 'Space Mono', monospace;
+    background: #292b34;
+    color: #ffffff;
+    max-width: 750px;
+    margin: auto;
+}
+
+* { 
+    box-sizing: border-box;
+}
+
+/* Column container */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  
+  /* Create two unequal columns that sits next to each other */
+  /* Sidebar/left column */
+  aside {
+    flex: 30%; /* Set the width of the sidebar */
+    padding: 20px; /* Some padding */
+  }
+  
+  /* Main column */
+  main {
+    flex: 70%; /* Set the width of the main content */
+    padding: 20px; /* Some padding */
+  }
+
+a {
+    color: #009dff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1 {
+    margin-top: 0px !important;
+    font-size: 30px;
+}
+h2 {
+    font-size: 26px;
+}
+h3 {
+    font-size: 22px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 11px;
+}
+p {
+    font-size: 16px;
+}
+header h1 {
+    font-size: 40px;
+    margin-bottom: 0;
+    margin-top: 0.5rem !important;
+}
+
+header h1 + p {
+    margin-top: 0px;
+}
+header, nav.social {
+    text-align: center;
+}
+
+/* main {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+}
+*/
+
+nav.social a {
+    font-size: 30px;
+}
+
+.fa-microblog {
+    color: #ffb61a;
+}
+
+.fa-mastodon {
+    color: #674fff;
+}
+
+.fa-envelope {
+    color: #0094e9;
+}
+
+.fa-microblog:hover, .fa-mastodon:hover {
+    color: #ffffff;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 450px) {
+    .row {
+      flex-direction: column;
+    }
+    aside img {
+        max-width: 400px;
+    }
+  }
+  
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    nav a {
+      float: none;
+      width: 100%;
+    }
+  }
