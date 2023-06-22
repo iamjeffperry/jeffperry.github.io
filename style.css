@@ -1,51 +1,82 @@
 /* Import Space Mono Font form Bunny Fonts */
-@import url(https://fonts.bunny.net/css?family=space-mono:400,400i,700,700i);
+@import url(https://fonts.bunny.net/css?family=courier-prime:400,400i,700,700i|space-mono:400,400i,700,700i);
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --background: #ffffff;
+  --textColor: #000000;
+  --accent: #da7b2e;
+  --accent2: #ed32de;
+
+}
 
 body {
-    font-family: 'Space Mono', monospace;
+    font-family: 'Courier Prime', monospace;
     max-width: 900px;
     margin: 0 auto;
 }
 
 .header {
-    padding: 40px; /* some padding */
+    padding: 0px 40px; /* some padding */
     text-align: center; /* center the text */
-    background: #dddddd; /* green background */
-    color: #000000; /* white text color */
+    background: var(--background);
+    color: var(--textColor); /* white text color */
   }
   
   /* Increase the font size of the <h1> element */
   .header h1 {
     font-size: 40px;
+    margin-bottom: 0px; 
   }
 
   /* Style the top navigation bar */
 .navbar {
     overflow: hidden; /* Hide overflow */
-    background-color: #ffffff; /* Dark background color */
+    text-align: center;
+    padding: 20px 0px 30px 0px;
+    border-radius: 2rem;
+    margin: auto;
   }
   
   /* Style the navigation bar links */
   .navbar a {
-    float: left; /* Make sure that the links stay side-by-side */
-    display: block; /* Change the display to block, for responsive reasons (see below) */
-    color: rgb(0, 0, 0); /* White text color */
+    color: var(--textColor); /* White text color */
     text-align: center; /* Center the text */
-    padding: 14px 20px; /* Add some padding */
+    padding: 10px 20px; /* Add some padding */
+    margin: 0 1rem;
     text-decoration: none; /* Remove underline */
+    border: 2px solid var(--accent2);
+    border-radius: 2rem;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--accent2); /* Dark background color */
+  }
+
+  .navbar a:hover {
+    font-weight: bold;
+    background-color: var(--background);
   }
   
   /* Right-aligned link */
   .navbar a.right {
     float: right; /* Float a link to the right */
   }
-  
-  /* Change color on hover/mouse-over */
-  .navbar a:hover {
-    background-color: #ffffff; /* Grey background color */
-    color: black; /* Black text color */
-  }
 
+  span.social {
+    display: inherit;
+    text-align: center;
+    font-size: 25px;
+}
+
+img.profilepic {
+  display: block;
+  border-radius: 1rem;
+  padding: 0.25rem;
+  margin: 10px auto;
+  max-width: 175px;
+  background-color: var(--accent);
+}
   /* Ensure proper sizing */
 * {
     box-sizing: border-box;
@@ -61,21 +92,37 @@ body {
   /* Sidebar/left column */
   .side {
     flex: 30%; /* Set the width of the sidebar */
-    background-color: #ffffff; /* Grey background color */
-    padding: 20px; /* Some padding */
+    background-color: var(--background); /* Grey background color */
+    padding: 0 30px; /* Some padding */
   }
   
   /* Main column */
   .main {
     flex: 70%; /* Set the width of the main content */
-    background-color: #ffffff; /* White background color */
-    padding: 20px; /* Some padding */
+    background-color: var(--background); /* White background color */
+    padding: 0 20px; /* Some padding */
+  }
+
+  .fa-microblog, .fa-mastodon, .fa-envelope {
+    color: var(--accent2);
+  }
+
+  a {
+    color: var(--accent2);
+  }
+
+  a:hover {
+    text-decoration: none;
+    font-weight: normal;
   }
 
   /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
     .row {
       flex-direction: column;
+    }
+    .side {
+      text-align: center;
     }
   }
   
